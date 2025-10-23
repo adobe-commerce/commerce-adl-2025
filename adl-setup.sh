@@ -104,7 +104,7 @@ echo -e "\n*************************************************\n"
 echo -e "\nSetting up MCP server env\n"
 cp env.example .env
 
-# Go back to storefront folder
+# Go back to extension folder
 echo -e "\n*************************************************\n"
-echo -e "\nGoing back to storefront folder\n"
-cd ..
+echo -e "\nGoing back to extension folder\n"
+cd ../../extension
