@@ -20,13 +20,15 @@ The setup script performs the following tasks:
 
 ## Usage
 
-### Standard Setup (with prerequisite checks)
+### macOS/Linux
+
+#### Standard Setup (with prerequisite checks)
 
 ```bash
 ./adl-setup.sh
 ```
 
-### Skip Prerequisite Checks
+#### Skip Prerequisite Checks
 
 If you're certain your environment meets the requirements, you can skip the prerequisite checks:
 
@@ -34,9 +36,32 @@ If you're certain your environment meets the requirements, you can skip the prer
 ./adl-setup.sh --skip-prereqs
 ```
 
+### Windows (PowerShell)
+
+#### Standard Setup (with prerequisite checks)
+
+```powershell
+.\adl-setup.ps1
+```
+
+#### Skip Prerequisite Checks
+
+```powershell
+.\adl-setup.ps1 -SkipPrereqs
+```
+
+**Note for Windows users:** You may need to enable script execution in PowerShell. Run PowerShell as Administrator and execute:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
 ## Script Options
 
+### macOS/Linux
 - `--skip-prereqs` - Skip the prerequisite version checks for Node.js, npm, and git
+
+### Windows (PowerShell)
+- `-SkipPrereqs` - Skip the prerequisite version checks for Node.js, npm, and git
 
 ## What Gets Installed
 
