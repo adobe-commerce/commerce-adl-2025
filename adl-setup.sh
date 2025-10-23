@@ -137,7 +137,7 @@ cp workspace.json scripts/onboarding/config/workspace.json
 # Connect local workspace to remote workspace
 echo -e "\n*************************************************\n"
 echo -e "\nConnecting local workspace to remote workspace\n"
-aio app use
+aio app use workspace.json -m
 
 # Move out of extension folder
 echo -e "\n*************************************************\n"
