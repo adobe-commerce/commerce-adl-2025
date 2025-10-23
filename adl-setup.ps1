@@ -128,7 +128,7 @@ Copy-Item workspace.json scripts/onboarding/config/workspace.json
 
 # Connect local workspace to remote workspace
 Write-Step "Connecting local workspace to remote workspace"
-aio app use
+aio app use workspace.json -m
 
 # Move out of extension folder
 Write-Step "Moving out of extension folder"
