@@ -67,6 +67,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 - **Adobe I/O CLI** (`@adobe/aio-cli`)
 - **Commerce Plugin** for Adobe I/O CLI
+- **Runtime Plugin** for Adobe I/O CLI
 - **Commerce Integration Starter Kit** (extension folder)
 - **AEM Boilerplate Commerce** (storefront folder)
 

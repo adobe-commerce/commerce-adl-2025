@@ -80,6 +80,10 @@ npm install -g @adobe/aio-cli
 Write-Step "Installing aio commerce plugin"
 aio plugins:install https://github.com/adobe-commerce/aio-cli-plugin-commerce
 
+# Install aio runtime plugin
+Write-Step "Installing aio runtime plugin"
+aio plugins:install @adobe/aio-cli-plugin-runtime
+
 # aio config clear
 Write-Step "Clearing aio config"
 aio config clear

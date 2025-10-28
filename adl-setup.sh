@@ -71,6 +71,10 @@ echo -e "\n*************************************************\n"
 echo -e "\nInstalling aio cli\n"
 npm install -g @adobe/aio-cli
 
+# Install aio runtime plugin
+echo -e "\n*************************************************\n"
+echo -e "\nInstalling aio runtime plugin\n"
+aio plugins:install @adobe/aio-cli-plugin-runtime
 
 # Install aio commerce plugin
 echo -e "\n*************************************************\n"
