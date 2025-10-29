@@ -30,10 +30,10 @@ if (-not $SkipPrereqs) {
     }
     git --version
 
-    # Check Node.js version (should be 22 or higher)
+    # Check Node.js version (must be exactly 22)
     Write-Host "`nChecking Node.js version..." -ForegroundColor Yellow
     if (-not (Test-CommandExists node)) {
-        Write-Host "ERROR: Node.js is not installed. Please install Node.js 22 or higher." -ForegroundColor Red
+        Write-Host "ERROR: Node.js is not installed. Please install Node.js 22." -ForegroundColor Red
         exit 1
     }
 
@@ -42,11 +42,11 @@ if (-not $SkipPrereqs) {
     $requiredNodeMajor = 22
     Write-Host "Found Node.js version: v$nodeVersion"
 
-    if ($nodeMajorVersion -lt $requiredNodeMajor) {
-        Write-Host "ERROR: Node.js version must be $requiredNodeMajor or higher. Found: v$nodeVersion" -ForegroundColor Red
+    if ($nodeMajorVersion -ne $requiredNodeMajor) {
+        Write-Host "ERROR: Node.js version must be any version of $requiredNodeMajor. Found: v$nodeVersion" -ForegroundColor Red
         exit 1
     }
-    Write-Host "Node.js version is sufficient" -ForegroundColor Green
+    Write-Host "Node.js version is correct" -ForegroundColor Green
 
     # Check npm version (should be 9 or higher)
     Write-Host "`nChecking npm version..." -ForegroundColor Yellow
