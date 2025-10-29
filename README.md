@@ -4,7 +4,7 @@ This repository contains a setup script for the ADL (Adobe Developer Lab) worksh
 
 ## Prerequisites
 
-- **Node.js** version 22 or higher
+- **Node.js** version 22
 - **npm** version 9 or higher
 - **git** installed and configured
 
