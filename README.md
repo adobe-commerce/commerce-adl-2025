@@ -25,6 +25,7 @@ The setup script performs the following tasks:
 #### Standard Setup (with prerequisite checks)
 
 ```bash
+chmod +x ./adl-setup.sh
 ./adl-setup.sh
 ```
 
