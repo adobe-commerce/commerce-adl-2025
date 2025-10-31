@@ -76,21 +76,29 @@ else {
 Write-Step "Installing aio cli"
 npm install -g @adobe/aio-cli
 
-# Install aio commerce plugin
-Write-Step "Installing aio commerce plugin"
-aio plugins:install https://github.com/adobe-commerce/aio-cli-plugin-commerce
-
 # Install aio runtime plugin
 Write-Step "Installing aio runtime plugin"
 aio plugins:install @adobe/aio-cli-plugin-runtime
+
+# Install aio commerce plugin
+Write-Step "Installing aio commerce plugin"
+aio plugins:install https://github.com/adobe-commerce/aio-cli-plugin-commerce
 
 # aio config clear
 Write-Step "Clearing aio config"
 aio config clear
 
-# aio force login
+# login to dev console on browser
+Write-Step "Logging in to dev console"
+Start-Process "https://developer.adobe.com/console"
+
+# wait for user to login and close browser
+Write-Host "`nWaiting for user to login and close browser" -ForegroundColor Yellow
+Read-Host "Press Enter to continue"
+
+# aio login on the CLI
 Write-Step "Logging in to aio"
-aio auth login -f
+aio auth login
 
 # aio console org select
 Write-Step "Selecting aio console org"

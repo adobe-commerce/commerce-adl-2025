@@ -86,10 +86,20 @@ echo -e "\n*************************************************\n"
 echo -e "\nClearing aio config\n"
 aio config clear
 
-# aio force login
+# login to dev console on browser
+echo -e "\n*************************************************\n"
+echo -e "\nLogging in to dev console\n"
+open https://developer.adobe.com/console
+
+# wait for user to login and close browser
+echo -e "\n*************************************************\n"
+echo -e "\nWaiting for user to login and close browser\n"
+read -p "Press Enter to continue..."
+
+# aio login on the CLI
 echo -e "\n*************************************************\n"
 echo -e "\nLogging in to aio\n"
-aio auth login -f
+aio auth login
 
 # aio console org select
 echo -e "\n*************************************************\n"
