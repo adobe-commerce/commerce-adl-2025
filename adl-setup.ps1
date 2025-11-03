@@ -88,9 +88,9 @@ aio plugins:install @adobe/aio-cli-plugin-runtime
 Write-Step "Clearing aio config"
 aio config clear
 
-# aio force login
+# aio login - using dev console session from the browser
 Write-Step "Logging in to aio"
-aio auth login -f
+aio auth login
 
 # aio console org select
 Write-Step "Selecting aio console org"

@@ -86,10 +86,10 @@ echo -e "\n*************************************************\n"
 echo -e "\nClearing aio config\n"
 aio config clear
 
-# aio force login
+# aio login - use dev console session from the browser
 echo -e "\n*************************************************\n"
 echo -e "\nLogging in to aio\n"
-aio auth login -f
+aio auth login
 
 # aio console org select
 echo -e "\n*************************************************\n"
