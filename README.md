@@ -10,13 +10,15 @@ This repository contains a setup script for the ADL (Adobe Developer Lab) worksh
 
 ## What This Script Does
 
-The setup script performs the following tasks:
+The setup script performs the following tasks in order:
 
-1. **Prerequisite Checks** - Verifies that git, Node.js, and npm are installed with correct versions
-2. **Adobe I/O CLI Setup** - Installs and configures the Adobe I/O CLI and commerce plugin
-3. **Extension Setup** - Clones and configures the Commerce Integration Starter Kit
-4. **Storefront Setup** - Clones and configures the AEM Boilerplate Commerce storefront
-5. **MCP Server Setup** - Configures the MCP (Model Context Protocol) server
+1. **Prerequisite Checks** - Verifies that git, Node.js 22, and npm 9+ are installed
+2. **Adobe I/O CLI Installation** - Installs the Adobe I/O CLI globally
+3. **Plugin Installation** - Installs Commerce and Runtime plugins for Adobe I/O CLI
+4. **Adobe I/O Configuration** - Clears config, authenticates, and selects org/project/workspace
+5. **Extension Setup** - Clones the Commerce Integration Starter Kit (from `adl` branch), installs dependencies, creates env file, downloads workspace configuration, and connects to remote workspace
+6. **Storefront Setup** - Clones the AEM Boilerplate Commerce storefront (from `agentic-dev` branch) and installs dependencies
+7. **MCP Server Setup** - Installs MCP server dependencies and creates env file
 
 ## Usage
 
@@ -76,8 +78,8 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 After the script completes, you'll have two main directories:
 
-- `extension/` - The Commerce Integration Starter Kit
-- `storefront/` - The AEM Boilerplate Commerce storefront
+- `extension/` - The Commerce Integration Starter Kit (includes `.env` file and workspace configuration)
+- `storefront/` - The AEM Boilerplate Commerce storefront (includes MCP server setup)
 
 ## Troubleshooting
 
@@ -92,5 +94,8 @@ If you encounter issues:
 
 - The script will prompt you to select your Adobe Console organization, project, and workspace
 - You'll need to authenticate with Adobe I/O during the setup process
-- The script creates `.env` files from template files where needed
-
+- The script creates `.env` files from template files:
+  - `extension/.env` (from `env.dist`)
+  - `storefront/mcp-server/.env` (from `env.example`)
+- The workspace configuration is downloaded and copied to `extension/scripts/onboarding/config/workspace.json`
+- Your local workspace is automatically connected to your Adobe Console workspace

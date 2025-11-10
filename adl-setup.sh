@@ -24,10 +24,10 @@ if [ "$SKIP_PREREQS" = false ]; then
     fi
     git --version
 
-    # Check Node.js version (should be 22 or higher)
+    # Check Node.js version (must be exactly 22)
     echo -e "\nChecking Node.js version..."
     if ! command -v node &> /dev/null; then
-        echo "ERROR: Node.js is not installed. Please install Node.js 22 or higher."
+        echo "ERROR: Node.js is not installed. Please install Node.js 22."
         exit 1
     fi
 
@@ -36,11 +36,11 @@ if [ "$SKIP_PREREQS" = false ]; then
     REQUIRED_NODE_MAJOR="22"
     echo "Found Node.js version: v$NODE_VERSION"
 
-    if [ "$NODE_MAJOR_VERSION" -lt "$REQUIRED_NODE_MAJOR" ]; then
-        echo "ERROR: Node.js version must be $REQUIRED_NODE_MAJOR or higher. Found: v$NODE_VERSION"
+    if [ "$NODE_MAJOR_VERSION" -ne "$REQUIRED_NODE_MAJOR" ]; then
+        echo "ERROR: Node.js version must be any version of $REQUIRED_NODE_MAJOR. Found: v$NODE_VERSION"
         exit 1
     fi
-    echo "Node.js version is sufficient"
+    echo "Node.js version is correct"
 
     # Check npm version (should be 9 or higher)
     echo -e "\nChecking npm version..."
@@ -86,10 +86,10 @@ echo -e "\n*************************************************\n"
 echo -e "\nClearing aio config\n"
 aio config clear
 
-# aio force login
+# aio login - use dev console session from the browser
 echo -e "\n*************************************************\n"
 echo -e "\nLogging in to aio\n"
-aio auth login -f
+aio auth login
 
 # aio console org select
 echo -e "\n*************************************************\n"
